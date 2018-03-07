@@ -1,0 +1,25 @@
+{
+  "name": "typa",
+  "version": "0.0.1",
+  "description": "JavaScript type checker utility",
+  "main": "typa.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/selfagency/typa.git"
+  },
+  "keywords": [
+    "javascript",
+    "type",
+    "types",
+    "utility"
+  ],
+  "author": "The Self Agency, LLC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/selfagency/typa/issues"
+  },
+  "homepage": "https://github.com/selfagency/typa#readme"
+}
