@@ -5,7 +5,7 @@ function arr (value) {
 
 // bad
 function bad (value) {
-  return nll(value) || undef(value) || empty(value || err(value))
+  return nll(value) || undef(value) || empty(value) || err(value)
 }
 
 // boolean
@@ -15,7 +15,7 @@ function bool (value) {
 
 // empty
 function empty (value) {
-  return value === '' || value === [] || value === {}
+  return (str(value) && value === '') || (arr(value) && value.length === 0) || (obj(value) && Object.keys(value).length === 0)
 }
 
 // date

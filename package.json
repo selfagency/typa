@@ -2,9 +2,9 @@
   "name": "typa",
   "version": "0.0.8",
   "description": "JavaScript type checker utility",
-  "main": "typa.js",
+  "main": "dist/typa.min.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/selfagency/typa/issues"
   },
-  "homepage": "https://github.com/selfagency/typa#readme"
+  "homepage": "https://github.com/selfagency/typa#readme",
+  "devDependencies": {
+    "grunt": "^1.0.2",
+    "grunt-node-minify": "^1.3.5",
+    "jest": "^22.4.2",
+    "jit-grunt": "^0.10.0"
+  }
 }
