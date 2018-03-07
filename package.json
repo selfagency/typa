@@ -1,6 +1,6 @@
 {
   "name": "typa",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "JavaScript type checker utility",
   "main": "typa.js",
   "scripts": {
