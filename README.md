@@ -23,7 +23,7 @@ Typa Function
 
 Checks if value matches the specified type, then returns the first function or value if true or the second function or value if false.
 
-###Available Types
+### Available Types
 +  *str*: String
 +  *arr*: Array
 +  *obj*: Object
@@ -35,7 +35,7 @@ Checks if value matches the specified type, then returns the first function or v
 +  *num*: Number
 +  *int*: Integer
 +  *json*: JSON object
-+  *null*: Null
++  *nll*: Null
 +  *undef*: Undefined
 +  *noru*: Null or undefined
 +  *bad*: Null, undefined, empty, or an error

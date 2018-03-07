@@ -5,7 +5,7 @@ function arr (value) {
 
 // bad
 function bad (value) {
-  return nll(value) || empty(value) || undef(value)
+  return nll(value) || undef(value) || empty(value || err(value)
 }
 
 // boolean
