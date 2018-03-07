@@ -5,8 +5,7 @@ A super-simple JavaScript type checker. Mainly pilfered from [this blog post](ht
 
 **Install**
 ```
-  yarn add https://github.com/selfagency/typa.git
-  // npm install typa (coming soon)
+  npm install typa
 ```
 
 **Import**
