@@ -99,6 +99,7 @@ function typa (check, value, fn1, fn2) {
 
 const is = {
   arr,
+  bad,
   bool,
   date,
   empty,
