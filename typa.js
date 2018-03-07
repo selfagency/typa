@@ -80,7 +80,7 @@ function undef (value) {
 
 // if type of $value is true, $fn1() else $fn2()
 function typa (check, value, fn1, fn2) {
-  if (fn(check) && fn(fn1) && fn(fn2)) {
+  if (fn(check) && !is.noru(value) && !is.noru(fn1) && !is.noru(fn2)) {
     return check(value) ? fn1 : fn2
   } else {
     throw new Error('Invalid parameters.')

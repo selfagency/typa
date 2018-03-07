@@ -1,22 +1,27 @@
 Typa
 ====
 
-A simple JavaScript type checker. Mainly pilfered from [this blog post](https://www.webbjocke.com/javascript-check-data-types/) by [Webbjocke](https://github.com/webbjocke).
+A super-simple JavaScript type checker. Mainly pilfered from [this blog post](https://www.webbjocke.com/javascript-check-data-types/) by [Webbjocke](https://github.com/webbjocke).
 
 **Install**
 ```
-  npm install typa
+  yarn add https://github.com/selfagency/typa.git
+  // npm install typa (coming soon)
 ```
 
 **Import**
 ```
   import {is} from 'typa'
+
+  // or
+
+  const is = require('typa')
 ```
 
 Typa Function
 -------------
 
-Checks if value matches type and then executes first function if true or second function if false.
+Checks if value matches the specified type, then returns the first function or value if true or the second function or value if false.
 
 ```
   $str = 'hello'
@@ -34,7 +39,6 @@ Checks if value matches type and then executes first function if true or second 
 
 Individual Checks
 -----------------
-
 
 **Array**
 ```
