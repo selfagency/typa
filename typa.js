@@ -3,6 +3,11 @@ function arr (value) {
   return value && typeof value === 'object' && value.constructor === Array
 }
 
+// bad
+function bad (value) {
+  return nll(value) || empty(value) || undef(value)
+}
+
 // boolean
 function bool (value) {
   return typeof value === 'boolean'
@@ -40,7 +45,7 @@ function fn (value) {
 
 // integer
 function int (value) {
-  return typeof value === 'number' && isFinite(value)
+  return typeof value === 'number' && isFinite(value) && Number.isInteger(value)
 }
 
 // null
@@ -51,6 +56,11 @@ function nll (value) {
 // null or undefined
 function noru (value) {
   return value == null || typeof value === 'undefined'
+}
+
+// number
+function num (value) {
+  return typeof value === 'number' && isFinite(value)
 }
 
 // object
@@ -80,8 +90,8 @@ function undef (value) {
 
 // if type of $value is true, $fn1() else $fn2()
 function typa (check, value, fn1, fn2) {
-  if (fn(check) && !is.noru(value) && !is.noru(fn1) && !is.noru(fn2)) {
-    return check(value) ? fn1 : fn2
+  if (!noru(check) && !noru(value) && !noru(fn1) && !noru(fn2)) {
+    return is[check](value) ? fn1 : fn2
   } else {
     throw new Error('Invalid parameters.')
   }
@@ -98,6 +108,7 @@ const is = {
   json,
   nll,
   noru,
+  num,
   obj,
   regex,
   str,

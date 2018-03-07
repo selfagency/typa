@@ -23,6 +23,25 @@ Typa Function
 
 Checks if value matches the specified type, then returns the first function or value if true or the second function or value if false.
 
+###Available Types
++  *str*: String
++  *arr*: Array
++  *obj*: Object
++  *bool*: Boolean
++  *date*: Date
++  *empty*: Empty string, array, or object
++  *err*: Error
++  *fn*: Function
++  *num*: Number
++  *int*: Integer
++  *json*: JSON object
++  *null*: Null
++  *undef*: Undefined
++  *noru*: Null or undefined
++  *bad*: Null, undefined, empty, or an error
++  *regex*: Regular expression
++  *sym*: Symbol  
+
 ```
   $str = 'hello'
   $arr = 'hello'
@@ -30,10 +49,10 @@ Checks if value matches the specified type, then returns the first function or v
   $fn1 = (() => console.log('hello'))
   $fn2 = (() => console.log('goodbye'))
 
-  is.typa('string', $str, $fn1, $fn2)
+  is.typa('str', $str, $fn1, $fn2)
     // => 'hello'
 
-  is.typa('array', $arr, $fn1, $fn2)
+  is.typa('arr', $arr, $fn1, $fn2)
     // => 'goodbye'
 ```
 
@@ -109,6 +128,12 @@ Individual Checks
     // => true
 
   is.noru(undefined)
+    // => true
+```
+
+**Number**
+```
+  is.num(28.2)
     // => true
 ```
 
