@@ -23,7 +23,7 @@ Available Types
 ---------------
 +   <a href="#array">*arr*</a>: Array
 +   <a href="#bad">*bad*</a>: Null, undefined, empty, or an error
-+   <a href="#bool">*bool*</a>: Boolean
++   <a href="#boolean">*bool*</a>: Boolean
 +   <a href="#date">*date*</a>: Date
 +   <a href="#empty">*empty*</a>: Empty string, array, or object
 +   <a href="#error">*err*</a>: Error
@@ -76,6 +76,26 @@ Method:
 Example:
 ```
   const isArray = is.arr(['text', 12])
+    // => true
+```
+
+<a name="bad"></a>**Bad**
+Method:
+```
+  is.bad($value)
+```
+Example:
+```
+  let isBad = is.bad(null)
+    // => true
+
+  isBad = is.bad(undefined)
+    // => true
+
+  isBad = is.bad({})
+    // => true
+
+  isBad = is.bad(new Error('This is an error'))
     // => true
 ```
 
