@@ -21,24 +21,24 @@ A super-simple JavaScript type checker. Mainly pilfered from [this blog post](ht
 
 Available Types
 ---------------
-+   <a href="#array">*arr*</a>: Array
-+   <a href="#bad">*bad*</a>: Null, undefined, empty, or an error
-+   <a href="#boolean">*bool*</a>: Boolean
-+   <a href="#date">*date*</a>: Date
-+   <a href="#empty">*empty*</a>: Empty string, array, or object
-+   <a href="#error">*err*</a>: Error
-+   <a href="#function">*fn*</a>: Function
-+   <a href="#integer">*int*</a>: Integer
-+   <a href="#json">*json*</a>: Serialized JSON object
-+   <a href="#null">*nll*</a>: Null
-+   <a href="#noru">*noru*</a>: Null or undefined
-+   <a href="#number">*num*</a>: Number
-+   <a href="#object">*obj*</a>: Object
-+   <a href="#promise">*prom*</a>: Promise
-+   <a href="#regex">*regex*</a>: Regular expression
-+   <a href="#string">*str*</a>: String
-+   <a href="#symbol">*sym*</a>: Symbol  
-+   <a href="#undefined">*undef*</a>: Undefined
++   <a href="#array">*arr*</a> → Array
++   <a href="#bad">*bad*</a> → Null, undefined, empty, or an error
++   <a href="#boolean">*bool*</a> → Boolean
++   <a href="#date">*date*</a> → Date
++   <a href="#empty">*empty*</a> → Empty string, array, or object
++   <a href="#error">*err*</a> → Error
++   <a href="#function">*fn*</a> → Function
++   <a href="#integer">*int*</a> → Integer
++   <a href="#json">*json*</a> → Serialized JSON object
++   <a href="#null">*nll*</a> → Null
++   <a href="#noru">*noru*</a> → Null or undefined
++   <a href="#number">*num*</a> → Number
++   <a href="#object">*obj*</a> → Object
++   <a href="#promise">*prom*</a> → Promise
++   <a href="#regex">*regex*</a> → Regular expression
++   <a href="#string">*str*</a> → String
++   <a href="#symbol">*sym*</a> → Symbol  
++   <a href="#undefined">*undef*</a> → Undefined
 
 Typa Function
 -------------
