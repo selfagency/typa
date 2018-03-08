@@ -218,18 +218,17 @@ Method:
 ```
 Example:
 ```
-  const isProm = is.prom(
-    new Promise((resolve, reject) => {
-      try {
-        console.log('I make a promise to you')
-        resolve()
-      } catch(err) {
-        reject(err)
-      }
-    })
-  )
+  const myPromise = new Promise((resolve, reject) => {
+    try {
+      console.log('I make a promise to you')
+      resolve()
+    } catch(err) {
+      reject(err)
+    }
+  })
   
-  // => true
+  const isProm = is.prom(myPromise)
+    // => true
 ```
 
 **Regex**
