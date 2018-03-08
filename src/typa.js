@@ -103,25 +103,8 @@ function typa (check, value, fn1, fn2) {
 }
 
 const is = {
-  arr,
-  bad,
-  bool,
-  date,
-  empty,
-  err,
-  fn,
-  int,
-  json,
-  nll,
-  noru,
-  num,
-  obj,
-  prom,
-  regex,
-  str,
-  sym,
-  typa,
-  undef
+  arr, bad, bool, date, empty, err, fn, int, json, nll,
+  noru, num, obj, prom, regex, str, sym, typa, undef
 }
 
 module.exports = is
