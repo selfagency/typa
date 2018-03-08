@@ -8,6 +8,7 @@ module.exports = grunt => {
     exec: {
      lint: './node_modules/.bin/eslint src/typa.js',
      test: 'npm test',
+     coverage: 'npm run test-with-coverage',
      commit: `git add .; git commit -m "${commitMsg}"; git push;`,
      bump: `echo "YES\n" | bump -c -p ${bumpType}`,
      push: 'npm publish'
@@ -26,5 +27,5 @@ module.exports = grunt => {
   })
   
   grunt.task.registerTask('default', ['exec:lint', 'exec:test', 'node-minify'])
-  grunt.task.registerTask('deploy', ['default', 'exec:commit', 'exec:bump', 'exec:push'])
+  grunt.task.registerTask('deploy', ['exec:lint', 'exec:coverage', 'node-minify', 'exec:commit', 'exec:bump', 'exec:push'])
 }

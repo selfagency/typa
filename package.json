@@ -4,7 +4,8 @@
   "description": "JavaScript type checker utility",
   "main": "dist/typa.min.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test-with-coverage": "jest --coverage && cat ./coverage/lcov.info | env-cmd ./.env codacy-coverage"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,8 @@
   },
   "homepage": "https://github.com/selfagency/typa#readme",
   "devDependencies": {
+    "codacy-coverage": "^2.1.0",
+    "env-cmd": "^7.0.0",
     "eslint": "^4.18.2",
     "grunt": "^1.0.2",
     "grunt-exec": "^3.0.0",
