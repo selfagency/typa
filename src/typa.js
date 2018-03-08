@@ -68,6 +68,11 @@ function obj (value) {
   return value && typeof value === 'object' && value.constructor === Object
 }
 
+// promise
+function prom (value) {
+  return !!value && (typeof value === 'object' || typeof value === 'function') && typeof value.then === 'function'
+}
+
 // regex
 function regex (value) {
   return value && typeof value === 'object' && value.constructor === RegExp
@@ -111,6 +116,7 @@ const is = {
   noru,
   num,
   obj,
+  prom,
   regex,
   str,
   sym,

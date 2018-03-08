@@ -38,6 +38,7 @@ Checks if value matches the specified type, then returns the first function or v
 +   *noru*: Null or undefined
 +   *num*: Number
 +   *obj*: Object
++   *prom*: Promise
 +   *regex*: Regular expression
 +   *str*: String
 +   *sym*: Symbol  
@@ -208,6 +209,27 @@ Example:
 ```
   const isObj = is.obj({ key: 'value' })
     // => true
+```
+
+**Promise**
+Method:
+```
+  is.prom($value)
+```
+Example:
+```
+  const isProm = is.prom(
+    new Promise((resolve, reject) => {
+      try {
+        console.log('I make a promise to you')
+        resolve()
+      } catch(err) {
+        reject(err)
+      }
+    })
+  )
+  
+  // => true
 ```
 
 **Regex**
