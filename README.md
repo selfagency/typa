@@ -43,17 +43,23 @@ Checks if value matches the specified type, then returns the first function or v
 +   *sym*: Symbol  
 +   *undef*: Undefined
 
+Method:
 ```
-  $str = 'hello'
-  $arr = 'hello'
+  is.typa($type, $value, $fn1, $fn2)
+```
 
-  $fn1 = (() => console.log('hello'))
-  $fn2 = (() => console.log('goodbye'))
+Example:
+```
+  const myString = 'this is a string'
+  const myArray = 'this is also a string, not an array'
 
-  is.typa('str', $str, $fn1, $fn2)
+  const fn1 = (() => console.log('hello'))
+  const fn2 = (() => console.log('goodbye'))
+
+  is.typa('str', myString, fn1, fn2)
     // => 'hello'
 
-  is.typa('arr', $arr, $fn1, $fn2)
+  is.typa('arr', myArray, fn1, fn2)
     // => 'goodbye'
 ```
 
@@ -61,109 +67,189 @@ Individual Checks
 -----------------
 
 **Array**
+Method:
 ```
-  is.arr(['text', 12])
+  is.arr($value)
+```
+Example:
+```
+  const isArray = is.arr(['text', 12])
     // => true
 ```
 
 **Boolean**
+Method:
 ```
-  is.bool(true)
+  is.bool($value)
+```
+Example:
+```
+  let isBool = is.bool(true)
     // => true
 
-  is.bool(false)
+  isBool = is.bool(false)
     // => true
 ```
 
 **Date**
+Method:
 ```
-  is.date(new Date())
+  is.date($value)
+```
+Example:
+```
+  const isDate = is.date(new Date())
     // => true
 ```
 
 **Empty**
+Method:
 ```
-  is.empty('')
+  is.empty($value)
+```
+Example:
+```
+  let isEmpty = is.empty('')
     // => true
 
-  is.empty([])
+  isEmpty = is.empty([])
     // => true
 
-  is.empty({})
+  isEmpty = is.empty({})
     // => true
 ```
 
 **Error**
+Method:
 ```
-  is.err(new Error('This is an error.'))
+  is.err($value)
+```
+Example:
+```
+  const isErr = is.err(new Error('This is an error.'))
     // => true
 ```
 
 **Function**
+Method:
 ```
-  is.fn(() => { console.log('Hi!') })
+  is.fn($value)
+```
+Example:
+```
+  const isFn = is.fn(() => { console.log('Hi!') })
     // => true
 ```
 
 **Integer**
+Method:
 ```
-  is.int(12)
+  is.int($value)
+```
+Example:
+```
+  const isInt = is.int(12)
     // => true
 ```
 
 **JSON**
+Method:
 ```
-  is.json('{"key": "value"}')
+  is.json($value)
+```
+Example:
+```
+  const isJson = is.json('{"key": "value"}')
     // => true
 ```
 
 **Null**
+Method:
 ```
-  is.nll(null)
+  is.null($value)
+```
+Example:
+```
+  const isNll = is.nll(null)
     // => true
 ```
 
 **Null or Undefined**
+Method:
 ```
-  is.noru(null)
+  is.noru($value)
+```
+Example:
+```
+  let isNoru = is.noru(null)
     // => true
 
-  is.noru(undefined)
+  isNoru = is.noru(undefined)
     // => true
 ```
 
 **Number**
+Method:
 ```
-  is.num(28.2)
+  is.num($value)
+```
+Example:
+```
+  const isNum = is.num(28.2)
     // => true
 ```
 
 **Object**
+Method:
 ```
-  is.obj({ key: 'value' })
+  is.obj($value)
+```
+Example:
+```
+  const isObj = is.obj({ key: 'value' })
     // => true
 ```
 
 **Regex**
+Method:
 ```
-  is.regex(new Regex(/\W/))
+  is.regex($value)
+```
+Example:
+```
+  const isRegex = is.regex(new Regex(/\W/))
     // => true
 ```
 
 **String**
+Method:
 ```
-  is.str('text')
+  is.str($value)
+```
+Example:
+```
+  const isStr = is.str('text')
     // => true
 ```
 
 **Symbol**
+Method:
 ```
-  is.sym(Symbol(42))
+  is.sym($value)
+```
+Example:
+```
+  const isSym = is.sym(Symbol(42))
     // => true
 ```
 
 **Undefined**
+Method:
 ```
-  is.undef(undefined)
+  is.undef($value)
+```
+Example:
+```
+  const isUndef = is.undef(undefined)
     // => true
 ```
