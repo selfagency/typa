@@ -19,30 +19,31 @@ A super-simple JavaScript type checker. Mainly pilfered from [this blog post](ht
   const is = require('typa')
 ```
 
+Available Types
+---------------
++   <a href="#array">*arr*</a>: Array
++   <a href="#bad">*bad*</a>: Null, undefined, empty, or an error
++   <a href="#bool">*bool*</a>: Boolean
++   <a href="#date">*date*</a>: Date
++   <a href="#empty">*empty*</a>: Empty string, array, or object
++   <a href="#error">*err*</a>: Error
++   <a href="#function">*fn*</a>: Function
++   <a href="#integer">*int*</a>: Integer
++   <a href="#json">*json*</a>: Serialized JSON object
++   <a href="#null">*nll*</a>: Null
++   <a href="#noru">*noru*</a>: Null or undefined
++   <a href="#number">*num*</a>: Number
++   <a href="#object">*obj*</a>: Object
++   <a href="#promise">*prom*</a>: Promise
++   <a href="#regex">*regex*</a>: Regular expression
++   <a href="#string">*str*</a>: String
++   <a href="#symbol">*sym*</a>: Symbol  
++   <a href="#undefined">*undef*</a>: Undefined
+
 Typa Function
 -------------
 
 Checks if value matches the specified type, then returns the first function or value if true or the second function or value if false.
-
-### Available Types
-+   *arr*: Array
-+   *bad*: Null, undefined, empty, or an error
-+   *bool*: Boolean
-+   *date*: Date
-+   *empty*: Empty string, array, or object
-+   *err*: Error
-+   *fn*: Function
-+   *int*: Integer
-+   *json*: Serialized JSON object
-+   *nll*: Null
-+   *noru*: Null or undefined
-+   *num*: Number
-+   *obj*: Object
-+   *prom*: Promise
-+   *regex*: Regular expression
-+   *str*: String
-+   *sym*: Symbol  
-+   *undef*: Undefined
 
 Method:
 ```
@@ -67,7 +68,7 @@ Example:
 Individual Checks
 -----------------
 
-**Array**
+<a name="array"></a>**Array**
 Method:
 ```
   is.arr($value)
@@ -78,7 +79,7 @@ Example:
     // => true
 ```
 
-**Boolean**
+<a name="boolean"></a>**Boolean**
 Method:
 ```
   is.bool($value)
@@ -92,7 +93,7 @@ Example:
     // => true
 ```
 
-**Date**
+<a name="date"></a>**Date**
 Method:
 ```
   is.date($value)
@@ -103,7 +104,7 @@ Example:
     // => true
 ```
 
-**Empty**
+<a name="empty"></a>**Empty**
 Method:
 ```
   is.empty($value)
@@ -120,7 +121,7 @@ Example:
     // => true
 ```
 
-**Error**
+<a name="error"></a>**Error**
 Method:
 ```
   is.err($value)
@@ -131,7 +132,7 @@ Example:
     // => true
 ```
 
-**Function**
+<a name="function"></a>**Function**
 Method:
 ```
   is.fn($value)
@@ -142,7 +143,7 @@ Example:
     // => true
 ```
 
-**Integer**
+<a name="integer"></a>**Integer**
 Method:
 ```
   is.int($value)
@@ -153,7 +154,7 @@ Example:
     // => true
 ```
 
-**JSON**
+<a name="json"></a>**JSON**
 Method:
 ```
   is.json($value)
@@ -164,7 +165,7 @@ Example:
     // => true
 ```
 
-**Null**
+<a name="null"></a>**Null**
 Method:
 ```
   is.null($value)
@@ -175,7 +176,7 @@ Example:
     // => true
 ```
 
-**Null or Undefined**
+<a name="noru"></a>**Null or Undefined**
 Method:
 ```
   is.noru($value)
@@ -189,7 +190,7 @@ Example:
     // => true
 ```
 
-**Number**
+<a name="number"></a>**Number**
 Method:
 ```
   is.num($value)
@@ -200,7 +201,7 @@ Example:
     // => true
 ```
 
-**Object**
+<a name="object"></a>**Object**
 Method:
 ```
   is.obj($value)
@@ -211,6 +212,7 @@ Example:
     // => true
 ```
 
+<a name="promise"></a>
 **Promise**
 Method:
 ```
@@ -226,11 +228,12 @@ Example:
       reject(err)
     }
   })
-  
+
   const isProm = is.prom(myPromise)
     // => true
 ```
 
+<a name="regex"></a>
 **Regex**
 Method:
 ```
@@ -242,6 +245,7 @@ Example:
     // => true
 ```
 
+<a name="string"></a>
 **String**
 Method:
 ```
@@ -253,6 +257,7 @@ Example:
     // => true
 ```
 
+<a name="symbol"></a>
 **Symbol**
 Method:
 ```
@@ -264,6 +269,7 @@ Example:
     // => true
 ```
 
+<a name="undefined"></a>
 **Undefined**
 Method:
 ```
