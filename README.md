@@ -25,23 +25,23 @@ Typa Function
 Checks if value matches the specified type, then returns the first function or value if true or the second function or value if false.
 
 ### Available Types
-+  *str*: String
-+  *arr*: Array
-+  *obj*: Object
-+  *bool*: Boolean
-+  *date*: Date
-+  *empty*: Empty string, array, or object
-+  *err*: Error
-+  *fn*: Function
-+  *num*: Number
-+  *int*: Integer
-+  *json*: JSON object
-+  *nll*: Null
-+  *undef*: Undefined
-+  *noru*: Null or undefined
-+  *bad*: Null, undefined, empty, or an error
-+  *regex*: Regular expression
-+  *sym*: Symbol  
++   *arr*: Array
++   *bad*: Null, undefined, empty, or an error
++   *bool*: Boolean
++   *date*: Date
++   *empty*: Empty string, array, or object
++   *err*: Error
++   *fn*: Function
++   *int*: Integer
++   *json*: JSON object
++   *nll*: Null
++   *noru*: Null or undefined
++   *num*: Number
++   *obj*: Object
++   *regex*: Regular expression
++   *str*: String
++   *sym*: Symbol  
++   *undef*: Undefined
 
 ```
   $str = 'hello'
