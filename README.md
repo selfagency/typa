@@ -1,7 +1,7 @@
 Typa
 ====
 
-A super-simple JavaScript type checker. Mainly pilfered from [this blog post](https://www.webbjocke.com/javascript-check-data-types/) by [Webbjocke](https://github.com/webbjocke). No dependencies. 3.6K [GCC](https://github.com/google/closure-compiler-js) compiled, 2.0k uncompiled.
+A super-simple JavaScript type checker. Mainly pilfered from [this blog post](https://www.webbjocke.com/javascript-check-data-types/) by [Webbjocke](https://github.com/webbjocke). No dependencies. 3.6K [GCC](https://github.com/google/closure-compiler-js) compiled, 2.0K uncompiled.
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c14912365bf14b74a778862a50d72860)](https://www.codacy.com/app/Self_Agency/typa?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=selfagency/typa&amp;utm_campaign=Badge_Grade)
 
