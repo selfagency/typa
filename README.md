@@ -168,7 +168,7 @@ const isNum = is.num(28.2)
   // => true
 ```
 
-<a name="object"></a>**obj**($value) — Object
+<a name="object"></a>**.obj**($value) — Object
 ```
 const isObj = is.obj({ key: 'value' })
   // => true
