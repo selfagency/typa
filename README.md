@@ -33,7 +33,7 @@ Checks if value matches the specified type, then returns the first function or v
 +   *err*: Error
 +   *fn*: Function
 +   *int*: Integer
-+   *json*: JSON object
++   *json*: Serialized JSON object
 +   *nll*: Null
 +   *noru*: Null or undefined
 +   *num*: Number
