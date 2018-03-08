@@ -59,17 +59,17 @@ Ternary function that checks if the supplied value matches the specified type, t
 
 **.typa**($type, $value, $fn1, $fn2)
 ```
-  const myString = 'this is a string'
-  const myArray = 'this is also a string, not an array'
+const myString = 'this is a string'
+const myArray = 'this is also a string, not an array'
 
-  const fn1 = (() => console.log('hello'))
-  const fn2 = (() => console.log('goodbye'))
+const fn1 = (() => console.log('hello'))
+const fn2 = (() => console.log('goodbye'))
 
-  is.typa('str', myString, fn1, fn2)
-    // => 'hello'
+is.typa('str', myString, fn1, fn2)
+  // => 'hello'
 
-  is.typa('arr', myArray, fn1, fn2)
-    // => 'goodbye'
+is.typa('arr', myArray, fn1, fn2)
+  // => 'goodbye'
 ```
 
 Individual Methods
