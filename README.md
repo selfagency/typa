@@ -188,7 +188,7 @@ Example:
 <a name="null"></a>**Null**
 Method:
 ```
-  is.null($value)
+  is.nll($value)
 ```
 Example:
 ```
