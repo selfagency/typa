@@ -43,7 +43,7 @@ Available Types
 Typa Function
 -------------
 
-Checks if value matches the specified type, then returns the first function or value if true or the second function or value if false.
+Checks if value matches the specified type, then returns the first function (or value) if true or the second function (or value) if false.
 
 Method:
 ```
