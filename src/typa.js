@@ -90,7 +90,7 @@ function sym (value) {
 
 // undefined
 function undef (value) {
-  return typeof value === 'undefined'
+  return value === undefined || typeof value === 'undefined'
 }
 
 // if type of $value is true, $fn1() else $fn2()

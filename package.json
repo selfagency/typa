@@ -1,7 +1,7 @@
 {
   "name": "typa",
   "version": "0.1.17",
-  "description": "JavaScript type checker utility",
+  "description": "A super-simple JavaScript type checker utility.",
   "main": "dist/typa.min.js",
   "scripts": {
     "test": "jest",
@@ -13,7 +13,9 @@
   },
   "keywords": [
     "javascript",
+    "checker",
     "type",
+    "typeof",
     "types",
     "utility"
   ],
