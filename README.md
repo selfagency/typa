@@ -12,7 +12,7 @@ npm install typa
 
 **Import**
 ```
-import {is} from 'typa'
+import is from 'typa'
 
 /* or */
 
