@@ -36,4 +36,7 @@ jobs:
       # run tests!
       - run: yarn run test-with-coverage
 
-
+      - notify:
+        webhooks:
+          # A list of hook hashes, containing the URL field
+          - url: https://circleci.com/hooks/bitbucket

@@ -1,30 +1,24 @@
 {
   "name": "typa",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "description": "A super-simple JavaScript type checker utility.",
   "main": "dist/typa.min.js",
   "scripts": {
     "test": "jest",
-    "test-with-coverage": "jest --coverage && cat ./coverage/lcov.info | env-cmd ./.env codacy-coverage"
+    "test-with-coverage":
+      "jest --coverage && cat ./coverage/lcov.info | env-cmd ./.env codacy-coverage"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/selfagency/typa.git"
+    "url": "git+https://bitbucket.com/selfagencyll/typa.git"
   },
-  "keywords": [
-    "javascript",
-    "checker",
-    "type",
-    "typeof",
-    "types",
-    "utility"
-  ],
+  "keywords": ["javascript", "checker", "type", "typeof", "types", "utility"],
   "author": "The Self Agency, LLC",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/selfagency/typa/issues"
+    "url": "https://bitbucket.org/selfagencyllc/typa/issues"
   },
-  "homepage": "https://github.com/selfagency/typa#readme",
+  "homepage": "https://bitbucket.org/selfagencyllc/typa",
   "devDependencies": {
     "codacy-coverage": "^2.1.0",
     "env-cmd": "^7.0.0",
