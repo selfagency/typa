@@ -7,7 +7,7 @@
     "start": "grunt",
     "deploy": "grunt deploy",
     "test": "jest",
-    "test-with-coverage": "jest --coverage && cat ./coverage/lcov.info | env-cmd ./.env codacy-coverage"
+    "test-with-coverage": "jest --coverage && cat ./coverage/lcov.info"
   },
   "repository": {
     "type": "git",
