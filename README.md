@@ -1,8 +1,8 @@
 # Typa
 
-A super-simple zero-dependency JavaScript type checker. Mainly pilfered from [this blog post](https://www.webbjocke.com/javascript-check-data-types/) by [Webbjocke](https://github.com/webbjocke). 3.6K [GCC](https://github.com/google/closure-compiler-js) compiled, 3.0K uncompiled.
+A super-simple zero-dependency JavaScript type checker. Mainly pilfered from [this blog post](https://www.webbjocke.com/javascript-check-data-types/) by [Webbjocke](https://github.com/webbjocke). 4.6K [GCC](https://github.com/google/closure-compiler-js) compiled, 3.0K uncompiled.
 
-[[![npm](https://img.shields.io/npm/dt/typa.svg)](https://www.npmjs.com/package/typa) [![npm](https://img.shields.io/npm/v/typa.svg)](https://www.npmjs.com/package/typa)
+[![npm](https://img.shields.io/npm/dt/typa.svg)](https://www.npmjs.com/package/typa) [![npm](https://img.shields.io/npm/v/typa.svg)](https://www.npmjs.com/package/typa)
 
 **Install**
 
