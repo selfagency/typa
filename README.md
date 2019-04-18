@@ -1,6 +1,6 @@
 # Typa
 
-A super-simple zero-dependency JavaScript type checker. Mainly pilfered from [this blog post](https://www.webbjocke.com/javascript-check-data-types/) by [Webbjocke](https://github.com/webbjocke). 3.6K [GCC](https://github.com/google/closure-compiler-js) compiled, 2.0K uncompiled.
+A super-simple zero-dependency JavaScript type checker. Mainly pilfered from [this blog post](https://www.webbjocke.com/javascript-check-data-types/) by [Webbjocke](https://github.com/webbjocke). 3.6K [GCC](https://github.com/google/closure-compiler-js) compiled, 3.0K uncompiled.
 
 [[![npm](https://img.shields.io/npm/dt/typa.svg)](https://www.npmjs.com/package/typa) [![npm](https://img.shields.io/npm/v/typa.svg)](https://www.npmjs.com/package/typa)
 
@@ -74,7 +74,24 @@ is.typa('arr', myArray, fn1, fn2)
   // => 'goodbye'
 ```
 
-## Individual Methods
+## What Method
+
+Returns a string or an array of strings matching the type of the supplied value.
+
+**.what**($value)
+
+```
+const myString = 'this is a string'
+const myArray = 'this is my array'
+
+is.what(myString)
+  // => 'string'
+
+is.what(myArray)
+  // => ['array', 'object']
+```
+
+## Individual Type Methods
 
 <a name="array"></a>**.arr**($value) — Array
 
