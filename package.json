@@ -1,37 +1,46 @@
 {
   "name": "typa",
-  "version": "0.1.19",
-  "description": "A super-simple JavaScript type checker utility.",
+  "version": "0.2.0",
+  "description": "Super-simple, zero-dependency JavaScript type checker utility.",
   "main": "dist/typa.min.js",
   "scripts": {
+    "start": "grunt",
+    "deploy": "grunt deploy",
     "test": "jest",
-    "test-with-coverage":
-      "jest --coverage && cat ./coverage/lcov.info | env-cmd ./.env codacy-coverage"
+    "test-with-coverage": "jest --coverage && cat ./coverage/lcov.info | env-cmd ./.env codacy-coverage"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://bitbucket.com/selfagencyll/typa.git"
+    "url": "git+https://gitlab.com/selfagency/typa.git"
   },
-  "keywords": ["javascript", "checker", "type", "typeof", "types", "utility"],
+  "keywords": [
+    "javascript",
+    "checker",
+    "type",
+    "typeof",
+    "types",
+    "utility"
+  ],
   "author": "The Self Agency, LLC",
   "license": "MIT",
   "bugs": {
-    "url": "https://bitbucket.org/selfagencyllc/typa/issues"
+    "url": "https://gitlab.com/selfagency/typa/issues"
   },
-  "homepage": "https://bitbucket.org/selfagencyllc/typa",
+  "homepage": "https://gitlab.com/selfagency/typa",
   "devDependencies": {
-    "codacy-coverage": "^2.1.0",
-    "env-cmd": "^7.0.0",
-    "eslint": "^4.18.2",
-    "eslint-plugin-import": "^2.9.0",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-promise": "^3.6.0",
+    "env-cmd": "^8.0.2",
+    "eslint": "^5.16.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-security": "^1.4.0",
-    "grunt": "^1.0.2",
+    "eslint-plugin-standard": "^4.0.0",
+    "grunt": "^1.0.4",
     "grunt-exec": "^3.0.0",
-    "grunt-node-minify": "^1.3.5",
-    "jest": "^22.4.2",
-    "jit-grunt": "^0.10.0"
+    "grunt-node-minify": "^1.5.0",
+    "jest": "^24.7.1",
+    "jit-grunt": "^0.10.0",
+    "prettier": "^1.17.0"
   },
   "dependencies": {}
 }

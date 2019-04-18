@@ -1,8 +1,8 @@
 # Typa
 
-A super-simple JavaScript type checker. Mainly pilfered from [this blog post](https://www.webbjocke.com/javascript-check-data-types/) by [Webbjocke](https://github.com/webbjocke). No dependencies. 3.6K [GCC](https://github.com/google/closure-compiler-js) compiled, 2.0K uncompiled.
+A super-simple zero-dependency JavaScript type checker. Mainly pilfered from [this blog post](https://www.webbjocke.com/javascript-check-data-types/) by [Webbjocke](https://github.com/webbjocke). 3.6K [GCC](https://github.com/google/closure-compiler-js) compiled, 2.0K uncompiled.
 
-[![Codacy grade](https://img.shields.io/codacy/grade/c14912365bf14b74a778862a50d72860.svg)](https://www.codacy.com/app/Self_Agency/typa?utm_source=github.com&utm_medium=referral&utm_content=selfagency/typa&utm_campaign=Badge_Grade) [![Codacy coverage](https://img.shields.io/codacy/coverage/c14912365bf14b74a778862a50d72860.svg)](https://www.codacy.com/app/Self_Agency/typa?utm_source=github.com&utm_medium=referral&utm_content=selfagency/typa&utm_campaign=Badge_Coverage) [![CircleCI](https://circleci.com/bb/selfagencyllc/typa/tree/master.svg?style=svg)](https://circleci.com/bb/selfagencyllc/typa/tree/master) ![Bitbucket issues](https://img.shields.io/bitbucket/issues/selfagencyllc/typa.svg) [![npm](https://img.shields.io/npm/dt/typa.svg)](https://www.npmjs.com/package/typa) [![npm](https://img.shields.io/npm/v/typa.svg)](https://www.npmjs.com/package/typa)
+[[![npm](https://img.shields.io/npm/dt/typa.svg)](https://www.npmjs.com/package/typa) [![npm](https://img.shields.io/npm/v/typa.svg)](https://www.npmjs.com/package/typa)
 
 **Install**
 
