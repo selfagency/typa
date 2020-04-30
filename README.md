@@ -4,7 +4,7 @@
 
 The easy-peasy zero-dependency JavaScript type checker that asks, "What typa input is that?"
 
-**Notice:** Breaking changes in v0.3.0. `nll` is now `nil` and `noru` is now `nullish`.
+**Notice:** Breaking changes in v0.3.0. New bundler, plus `nll` is now `nil` and `noru` is now `nullish`.
 
 ## Install
 
