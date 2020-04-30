@@ -1,4 +1,4 @@
-const is = require('../src/typa.js')
+import is from '../src/index.js'
 
 test('checks for a null value', () => {
   expect(is.nil(null)).toBe(true)

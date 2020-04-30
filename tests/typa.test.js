@@ -1,23 +1,14 @@
-const is = require('../src/typa.js')
+import is from '../src/index.js'
 
-function oneArg () {
-  is.typa('str')
-}
-
-function twoArgs () {
-  is.typa('str', 123)
-}
-
-function threeArgs () {
-  is.typa('str', 123, 'abc')
-}
+const a = () => true
+const b = () => false
 
 test('test typa function', () => {
-  expect(is.typa('int', 123, 'abc', 123)).toBe('abc')
-  expect(is.typa('int', 'abc', 'abc', 123)).toBe(123)
-  expect(is.typa('str', 123, 'abc', 123)).toBe(123)
-  expect(is.typa('str', 'abc', 'abc', 123)).toBe('abc')
-  expect(oneArg).toThrowError('Invalid parameters.')
-  expect(twoArgs).toThrowError('Invalid parameters.')
-  expect(threeArgs).toThrowError('Invalid parameters.')
+  expect(is.typa('int', 123, a, b)).toBe(true)
+  expect(is.typa('int', 'abc', a, b)).toBe(false)
+  expect(is.typa('str', 'abc', a, b)).toBe(true)
+  expect(is.typa('str', 123, a, b)).toBe(false)
+  expect(() => is.typa('str')).toThrow()
+  expect(() => is.typa('str', 123)).toThrow()
+  expect(() => is.typa('str', 123, 'abc')).toThrow()
 })

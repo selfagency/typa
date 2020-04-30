@@ -1,4 +1,4 @@
-const is = require('../src/typa.js')
+import is from '../src/index.js'
 
 test('checks for an array', () => {
   expect(is.arr(['a', 'b', 'c'])).toBe(true)

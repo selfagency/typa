@@ -1,4 +1,4 @@
-const is = require('../src/typa.js')
+import is from '../src/index.js'
 
 test('checks for a number', () => {
   expect(is.num(12.5)).toBe(true)

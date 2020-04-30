@@ -1,6 +1,8 @@
-const is = require('../src/typa.js')
+import is from '../src/index.js'
 
-// tbd
-
-test('test typa function', () => {
+test('test what function', () => {
+  expect(is.what('abcdefg')).toBe('string')
+  expect(is.what(['abc', 'def'])).toBe('array')
+  expect(is.what({})).toBe('object')
+  expect(is.what(null)).toBe('null')
 })

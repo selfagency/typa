@@ -1,14 +1,6 @@
-const is = require('../src/typa.js')
-
-const testProm = new Promise((resolve, reject) => {
-  try {
-    resolve()
-  } catch(err) {
-    reject(err)
-  }
-})
+import is from '../src/index.js'
 
 test('checks for a promise', () => {
-  expect(is.prom(testProm)).toBe(true)
-  expect(is.prom(() => { console.log('Just a function')} )).toBe(false)
+  expect(is.prom(new Promise(() => {}))).toBe(true)
+  expect(is.prom(() => {})).toBe(false)
 })

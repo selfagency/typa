@@ -1,4 +1,4 @@
-const is = require('../src/typa.js')
+import is from '../src/index.js'
 
 test('checks for an object', () => {
   expect(is.obj({ test: 123 })).toBe(true)

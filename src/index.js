@@ -1,36 +1,35 @@
 // array
 const arr = value => {
-  return !!value && typeof value === 'object' && value.constructor === Array
+  return typeof value === 'object' && value.constructor === Array
 }
 
 // bad
 const bad = value => {
-  return !!value && (nil(value) || undef(value) || nullish(value) || empty(value) || err(value))
+  return nil(value) || undef(value) || nullish(value) || empty(value) || err(value)
 }
 
 // boolean
 const bool = value => {
-  return !!value && typeof value === 'boolean'
+  return typeof value === 'boolean'
 }
 
 // empty
 const empty = value => {
   return (
-    !!value &&
-    ((str(value) && value.length > 0) ||
-      (arr(value) && value.length === 0) ||
-      (obj(value) && Object.keys(value).length === 0))
+    (str(value) && value.length === 0) ||
+    (arr(value) && value.length === 0) ||
+    (obj(value) && Object.keys(value).length === 0)
   )
 }
 
 // date
 const date = value => {
-  return !!value && value instanceof Date
+  return value instanceof Date
 }
 
 // error
 const err = value => {
-  return !!value && value instanceof Error
+  return value instanceof Error
 }
 
 // json
@@ -57,12 +56,12 @@ const json = (value, state) => {
 
 // function
 const fn = value => {
-  return !!value && typeof value === 'function'
+  return typeof value === 'function'
 }
 
 // integer
 const int = value => {
-  return !!value && typeof value === 'number' && isFinite(value) && Number.isInteger(value)
+  return typeof value === 'number' && isFinite(value) && Number.isInteger(value)
 }
 
 // null
@@ -77,37 +76,32 @@ const nullish = value => {
 
 // number
 const num = value => {
-  return !!value && typeof value === 'number' && isFinite(value)
+  return typeof value === 'number' && isFinite(value)
 }
 
 // object
 const obj = value => {
-  return !!value && typeof value === 'object' && value.constructor === Object
+  return typeof value === 'object' && value.constructor === Object
 }
 
 // promise
 const prom = value => {
-  return (
-    !!value &&
-    (typeof value === 'object' || typeof value === 'function') &&
-    value.then &&
-    typeof value.then === 'function'
-  )
+  return value instanceof Promise
 }
 
 // regex
 const regex = value => {
-  return !!value && typeof value === 'object' && value.constructor === RegExp
+  return typeof value === 'object' && value.constructor === RegExp
 }
 
 // string
 const str = value => {
-  return !!value && (typeof value === 'string' || value instanceof String)
+  return typeof value === 'string' || value instanceof String
 }
 
 // symbol
 const sym = value => {
-  return !!value && typeof value === 'symbol'
+  return typeof value === 'symbol'
 }
 
 // undefined
@@ -116,17 +110,20 @@ const undef = value => {
 }
 
 // if type of $value is true, $fn1() else $fn2()
-function typa(check, value, fn1, fn2) {
-  if (!!check && !!value && !!fn1 && !!fn2) {
-    return is[check](value) ? fn1 : fn2
-  } else {
-    throw new Error('Invalid parameters.')
-  }
+const typa = (check, value, fn1, fn2) => {
+  if (!!check && value && !!fn1 && !!fn2) return is[check](value) ? fn1() : fn2()
+  throw new Error('typa(): Invalid input')
 }
 
 // return type(s) of $value
 const what = value => {
   let what = []
+
+  const nullChecks = [
+    { fn: 'undef', name: 'undefined' },
+    { fn: 'nil', name: 'null' },
+  ]
+
   const checks = [
     { fn: 'arr', name: 'array' },
     { fn: 'bool', name: 'boolean' },
@@ -135,23 +132,28 @@ const what = value => {
     { fn: 'fn', name: 'function' },
     { fn: 'int', name: 'integer' },
     { fn: 'json', name: 'json' },
-    { fn: 'nil', name: 'null' },
     { fn: 'num', name: 'number' },
     { fn: 'obj', name: 'object' },
     { fn: 'prom', name: 'promise' },
     { fn: 'regex', name: 'regexp' },
     { fn: 'str', name: 'string' },
     { fn: 'sym', name: 'symbol' },
-    { fn: 'undef', name: 'undefined' },
   ]
-  checks.forEach(check => {
+
+  nullChecks.forEach(check => {
     if (is[check.fn](value)) what.push(check.name)
   })
-  if (!value) throw new Error('Missing value to test.')
+
+  if (!what.length) {
+    checks.forEach(check => {
+      if (is[check.fn](value)) what.push(check.name)
+    })
+  }
+
   return what.length === 1 ? what[0] : what
 }
 
-export default {
+const is = {
   arr,
   bad,
   bool,
@@ -173,3 +175,5 @@ export default {
   undef,
   what,
 }
+
+export default is
