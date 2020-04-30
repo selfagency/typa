@@ -1,6 +1,6 @@
 {
   "name": "typa",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "Super-simple, zero-dependency JavaScript type checker utility.",
   "keywords": [
     "javascript",
