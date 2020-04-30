@@ -43,7 +43,7 @@ if (is.str(goodbye)) console.log(hello)
 - <a href="#error">_err_</a> → Error
 - <a href="#function">_fn_</a> → Function
 - <a href="#integer">_int_</a> → Integer
-- <a href="#json">_json_</a> → Serialized JSON object
+- <a href="#json">_json_</a> → JSON string or object
 - <a href="#nil">_nil_</a> → Null
 - <a href="#nullish">_nullish_</a> → Null or undefined
 - <a href="#number">_num_</a> → Number
@@ -163,10 +163,12 @@ const isInt = is.int(12)
 // => true
 ```
 
-<a name="json"></a>**.json**(\$value, \$type ['str'|'obj']) — Serialized JSON object
+<a name="json"></a>**.json**(\$value, \$type ['str'|'obj']) — JSON string (default) or object
 
 ```js
 const isJson = is.json('{"key": "value"}')
+// => true
+
 const isJson = is.json({ key: 'value' }, 'obj')
 // => true
 ```
