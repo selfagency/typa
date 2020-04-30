@@ -111,7 +111,7 @@ const undef = value => {
 
 // if type of $value is true, $fn1() else $fn2()
 const typa = (check, value, fn1, fn2) => {
-  if (!!check && value && !!fn1 && !!fn2) return is[check](value) ? fn1() : fn2()
+  if (!!check && value && !!fn1 && !!fn2) return is[check](value) ? (fn(fn1) ? fn1() : fn1) : fn(fn2) ? fn2() : fn2
   throw new Error('typa(): Invalid input')
 }
 

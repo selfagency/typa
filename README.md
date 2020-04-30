@@ -56,7 +56,7 @@ if (is.str(goodbye)) console.log(hello)
 
 ## Typa Method
 
-Ternary operator that checks if the supplied value matches the specified type, then returns the first callback function (or value) if true or the second callback function (or value) if false.
+Ternary operator that checks if the supplied value matches the specified type, then returns the first callback function or value if true or the second callback function or value if false.
 
 **.typa**($type, $value, $fn1, $fn2)
 
