@@ -163,10 +163,11 @@ const isInt = is.int(12)
 // => true
 ```
 
-<a name="json"></a>**.json**(\$value) — Serialized JSON object
+<a name="json"></a>**.json**(\$value, \$type ['str'|'obj']) — Serialized JSON object
 
 ```js
 const isJson = is.json('{"key": "value"}')
+const isJson = is.json({ key: 'value' }, 'obj')
 // => true
 ```
 
