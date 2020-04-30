@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/dt/typa.svg)](https://www.npmjs.com/package/typa) [![npm](https://img.shields.io/npm/v/typa.svg)](https://www.npmjs.com/package/typa) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Twitter: @selfagency_llc](https://img.shields.io/twitter/follow/selfagency_llc.svg?style=social)](https://twitter.com/selfagency_llc)
 
-The easy-peasy zero-dependency JavaScript type checker that asks, "What typa input is that?"
+The easy-peasy zero-dependency JavaScript type checker that asks, "What typa input is that?" Minified packaged version is 2 entire KB.
 
 **Notice:** Breaking changes in v0.3.0. New bundler, plus `nll` is now `nil` and `noru` is now `nullish`.
 
