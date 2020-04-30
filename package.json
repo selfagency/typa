@@ -65,6 +65,7 @@
     "eslint-plugin-security": "^1.4.0",
     "eslint-plugin-standard": "^4.0.0",
     "jest": "^25.5.2",
+    "pika-plugin-minify": "^0.1.0",
     "prettier": "^2.0.5",
     "typescript": "^3.8.3"
   },
