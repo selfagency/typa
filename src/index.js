@@ -35,16 +35,13 @@ const err = value => {
 // json
 const json = (value, state) => {
   if (!!value) {
+    if (state === 'obj') {
+      if (str(value)) return false
+      if (obj(value)) return true
+    }
+
     try {
-      switch (state) {
-        case 'obj':
-          JSON.stringify(value)
-          break
-        case 'str':
-        default:
-          JSON.parse(value)
-          break
-      }
+      JSON.parse(value)
       return true
     } catch (e) {
       return false
