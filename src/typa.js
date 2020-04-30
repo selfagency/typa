@@ -1,101 +1,123 @@
 // array
-function arr(value) {
-  return value && typeof value === 'object' && value.constructor === Array
+const arr = value => {
+  return !!value && typeof value === 'object' && value.constructor === Array
 }
 
 // bad
-function bad(value) {
-  return nll(value) || undef(value) || empty(value) || err(value)
+const bad = value => {
+  return !!value && (nil(value) || undef(value) || nullish(value) || empty(value) || err(value))
 }
 
 // boolean
-function bool(value) {
-  return typeof value === 'boolean'
+const bool = value => {
+  return !!value && typeof value === 'boolean'
 }
 
 // empty
-function empty(value) {
-  return (str(value) && value === '') || (arr(value) && value.length === 0) || (obj(value) && Object.keys(value).length === 0)
+const empty = value => {
+  return (
+    !!value &&
+    ((str(value) && value.length > 0) ||
+      (arr(value) && value.length === 0) ||
+      (obj(value) && Object.keys(value).length === 0))
+  )
 }
 
 // date
-function date(value) {
-  return value instanceof Date
+const date = value => {
+  return !!value && value instanceof Date
 }
 
 // error
-function err(value) {
-  return value instanceof Error && typeof value.message !== 'undefined'
+const err = value => {
+  return !!value && value instanceof Error
 }
 
 // json
-function json(value) {
-  try {
-    JSON.parse(value)
-    return true
-  } catch (e) {
+const json = (value, state) => {
+  if (!!value) {
+    try {
+      switch (state) {
+        case 'obj':
+          JSON.stringify(value)
+          break
+        case 'str':
+        default:
+          JSON.parse(value)
+          break
+      }
+      return true
+    } catch (e) {
+      return false
+    }
+  } else {
     return false
   }
 }
 
 // function
-function fn(value) {
-  return typeof value === 'function'
+const fn = value => {
+  return !!value && typeof value === 'function'
 }
 
 // integer
-function int(value) {
-  return typeof value === 'number' && isFinite(value) && Number.isInteger(value)
+const int = value => {
+  return !!value && typeof value === 'number' && isFinite(value) && Number.isInteger(value)
 }
 
 // null
-function nll(value) {
-  return value == null
+const nil = value => {
+  return value === null
 }
 
 // null or undefined
-function noru(value) {
-  return value == null || typeof value === 'undefined'
+const nullish = value => {
+  return value == null || value == undefined
 }
 
 // number
-function num(value) {
-  return typeof value === 'number' && isFinite(value)
+const num = value => {
+  return !!value && typeof value === 'number' && isFinite(value)
 }
 
 // object
-function obj(value) {
-  return value && typeof value === 'object' && value.constructor === Object
+const obj = value => {
+  return !!value && typeof value === 'object' && value.constructor === Object
 }
 
 // promise
-function prom(value) {
-  return !!value && (typeof value === 'object' || typeof value === 'function') && typeof value.then === 'function'
+const prom = value => {
+  return (
+    !!value &&
+    (typeof value === 'object' || typeof value === 'function') &&
+    value.then &&
+    typeof value.then === 'function'
+  )
 }
 
 // regex
-function regex(value) {
-  return value && typeof value === 'object' && value.constructor === RegExp
+const regex = value => {
+  return !!value && typeof value === 'object' && value.constructor === RegExp
 }
 
 // string
-function str(value) {
-  return typeof value === 'string' || value instanceof String
+const str = value => {
+  return !!value && (typeof value === 'string' || value instanceof String)
 }
 
 // symbol
-function sym(value) {
-  return typeof value === 'symbol'
+const sym = value => {
+  return !!value && typeof value === 'symbol'
 }
 
 // undefined
-function undef(value) {
+const undef = value => {
   return value === undefined || typeof value === 'undefined'
 }
 
 // if type of $value is true, $fn1() else $fn2()
 function typa(check, value, fn1, fn2) {
-  if (!noru(check) && !noru(value) && !noru(fn1) && !noru(fn2)) {
+  if (!!check && !!value && !!fn1 && !!fn2) {
     return is[check](value) ? fn1 : fn2
   } else {
     throw new Error('Invalid parameters.')
@@ -103,7 +125,7 @@ function typa(check, value, fn1, fn2) {
 }
 
 // return type(s) of $value
-function what(value) {
+const what = value => {
   let what = []
   const checks = [
     { fn: 'arr', name: 'array' },
@@ -113,26 +135,41 @@ function what(value) {
     { fn: 'fn', name: 'function' },
     { fn: 'int', name: 'integer' },
     { fn: 'json', name: 'json' },
-    { fn: 'nll', name: 'null' },
+    { fn: 'nil', name: 'null' },
     { fn: 'num', name: 'number' },
     { fn: 'obj', name: 'object' },
     { fn: 'prom', name: 'promise' },
     { fn: 'regex', name: 'regexp' },
     { fn: 'str', name: 'string' },
     { fn: 'sym', name: 'symbol' },
-    { fn: 'undef', name: 'undefined' }
+    { fn: 'undef', name: 'undefined' },
   ]
   checks.forEach(check => {
-    if (is[check.fn](value))
-      what.push(check.name)
+    if (is[check.fn](value)) what.push(check.name)
   })
-  if (is.noru(value)) throw new Error('Missing value to test.')
+  if (!value) throw new Error('Missing value to test.')
   return what.length === 1 ? what[0] : what
 }
 
-const is = {
-  arr, bad, bool, date, empty, err, fn, int, json, nll,
-  noru, num, obj, prom, regex, str, sym, typa, undef, what
+export default {
+  arr,
+  bad,
+  bool,
+  date,
+  empty,
+  err,
+  fn,
+  int,
+  json,
+  nil,
+  nullish,
+  num,
+  obj,
+  prom,
+  regex,
+  str,
+  sym,
+  typa,
+  undef,
+  what,
 }
-
-module.exports = is

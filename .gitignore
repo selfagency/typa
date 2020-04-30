@@ -1,6 +1,24 @@
+ âœ“ Fetch template
+//www.gitignore.io/api/linux,macos,dotenv,node
+# Edit at https://www.gitignore.io/?templates=linux,macos,dotenv,node
 
-# Created by https://www.gitignore.io/api/node,macos,visualstudiocode
-# Edit at https://www.gitignore.io/?templates=node,macos,visualstudiocode
+### dotenv ###
+.env
+
+### Linux ###
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
 
 ### macOS ###
 # General
@@ -53,6 +71,7 @@ lib-cov
 
 # Coverage directory used by tools like istanbul
 coverage
+*.lcov
 
 # nyc test coverage
 .nyc_output
@@ -76,6 +95,9 @@ jspm_packages/
 # TypeScript v1 declaration files
 typings/
 
+# TypeScript cache
+*.tsbuildinfo
+
 # Optional npm cache directory
 .npm
 
@@ -92,7 +114,6 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
 .env.test
 
 # parcel-bundler cache (https://parceljs.org/)
@@ -103,6 +124,18 @@ typings/
 
 # nuxt.js build output
 .nuxt
+
+# rollup.js default build output
+dist/
+
+# Uncomment the public line if your project uses Gatsby
+# https://nextjs.org/blog/next-9-1#public-directory-support
+# https://create-react-app.dev/docs/using-the-public-folder/#docsNav
+# public
+
+# Storybook build outputs
+.out
+.storybook-out
 
 # vuepress build output
 .vuepress/dist
@@ -116,15 +149,9 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
-### VisualStudioCode ###
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+# Temporary folders
+tmp/
+temp/
+pkg/
 
-### VisualStudioCode Patch ###
-# Ignore all local history of files
-.history
-
-# End of https://www.gitignore.io/api/node,macos,visualstudiocode
+# End of https://www.gitignore.io/api/linux,macos,dotenv,node

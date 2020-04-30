@@ -2,17 +2,6 @@
   "name": "typa",
   "version": "0.2.3",
   "description": "Super-simple, zero-dependency JavaScript type checker utility.",
-  "main": "dist/typa.min.js",
-  "scripts": {
-    "start": "grunt",
-    "deploy": "grunt deploy",
-    "test": "jest",
-    "test-with-coverage": "jest --coverage && cat ./coverage/lcov.info"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://gitlab.com/selfagency/typa.git"
-  },
   "keywords": [
     "javascript",
     "checker",
@@ -21,25 +10,51 @@
     "types",
     "utility"
   ],
-  "author": "The Self Agency, LLC",
+  "author": "Daniel Sieradski <daniel@self.agency>",
   "license": "MIT",
+  "homepage": "https://gitlab.com/selfagency/typa",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/selfagency/typa.git"
+  },
   "bugs": {
     "url": "https://gitlab.com/selfagency/typa/issues"
   },
-  "homepage": "https://gitlab.com/selfagency/typa",
+  "scripts": {
+    "build": "pika build",
+    "test": "jest --coverage"
+  },
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-standard-pkg",
+        {
+          "exclude": [
+            "tests/**/*"
+          ]
+        }
+      ],
+      [
+        "@pika/plugin-build-node"
+      ],
+      [
+        "@pika/plugin-build-web"
+      ],
+      [
+        "@pika/plugin-build-types"
+      ]
+    ]
+  },
   "devDependencies": {
-    "eslint": "^5.16.0",
+    "eslint": "^6.8.0",
     "eslint-plugin-import": "^2.17.2",
-    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-security": "^1.4.0",
     "eslint-plugin-standard": "^4.0.0",
-    "grunt": "^1.0.4",
-    "grunt-exec": "^3.0.0",
-    "grunt-node-minify": "^1.5.0",
-    "jest": "^24.7.1",
-    "jit-grunt": "^0.10.0",
-    "prettier": "^1.17.0"
+    "jest": "^25.5.2",
+    "prettier": "^2.0.5"
   },
   "dependencies": {}
 }

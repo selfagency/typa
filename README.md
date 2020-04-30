@@ -1,28 +1,28 @@
-# Typa
+# Typa: Zero-dep JS type checker 🧐
 
-A super-simple zero-dependency JavaScript type checker. Mainly pilfered from [this blog post](https://www.webbjocke.com/javascript-check-data-types/) by [Webbjocke](https://github.com/webbjocke). 4.6K [GCC](https://github.com/google/closure-compiler-js) compiled, 3.0K uncompiled.
+[![npm](https://img.shields.io/npm/dt/typa.svg)](https://www.npmjs.com/package/typa) [![npm](https://img.shields.io/npm/v/typa.svg)](https://www.npmjs.com/package/typa) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Twitter: @selfagency_llc](https://img.shields.io/twitter/follow/selfagency_llc.svg?style=social)](https://twitter.com/selfagency_llc)
 
-[![npm](https://img.shields.io/npm/dt/typa.svg)](https://www.npmjs.com/package/typa) [![npm](https://img.shields.io/npm/v/typa.svg)](https://www.npmjs.com/package/typa)
+The easy-peasy zero-dependency JavaScript type checker that asks, "What typa input is that?"
 
-**Install**
+**Notice:** Breaking changes in v0.3.0. `nll` is now `nil` and `noru` is now `nullish`.
 
-```
-npm install typa
-```
+## Install
 
-**Import**
-
-```
-import is from 'typa'
-
-/* or */
-
-const is = require('typa')
+```sh
+yarn add typa || npm install typa
 ```
 
-**Quick Start**
+## Run tests
 
+```sh
+yarn test
 ```
+
+## Basic Usage
+
+```js
+import is from 'typa' || const is = require('typa')
+
 const hello = 'Hello!'
 const goodbye = ['Goodbye!', 'Adios!', 'Au revoir!']
 
@@ -35,216 +35,232 @@ if (is.str(goodbye)) console.log(hello)
 
 ## API
 
-* <a href="#array">_arr_</a> → Array
-* <a href="#bad">_bad_</a> → Null, undefined, empty, or an error
-* <a href="#boolean">_bool_</a> → Boolean
-* <a href="#date">_date_</a> → Date
-* <a href="#empty">_empty_</a> → Empty string, array, or object
-* <a href="#error">_err_</a> → Error
-* <a href="#function">_fn_</a> → Function
-* <a href="#integer">_int_</a> → Integer
-* <a href="#json">_json_</a> → Serialized JSON object
-* <a href="#null">_nll_</a> → Null
-* <a href="#noru">_noru_</a> → Null or undefined
-* <a href="#number">_num_</a> → Number
-* <a href="#object">_obj_</a> → Object
-* <a href="#promise">_prom_</a> → Promise
-* <a href="#regex">_regex_</a> → Regular expression
-* <a href="#string">_str_</a> → String
-* <a href="#symbol">_sym_</a> → Symbol
-* <a href="#undefined">_undef_</a> → Undefined
+- <a href="#array">_arr_</a> → Array
+- <a href="#bad">_bad_</a> → Null, undefined, empty, or an error
+- <a href="#boolean">_bool_</a> → Boolean
+- <a href="#date">_date_</a> → Date
+- <a href="#empty">_empty_</a> → Empty string, array, or object
+- <a href="#error">_err_</a> → Error
+- <a href="#function">_fn_</a> → Function
+- <a href="#integer">_int_</a> → Integer
+- <a href="#json">_json_</a> → Serialized JSON object
+- <a href="#nil">_nil_</a> → Null
+- <a href="#nullish">_nullish_</a> → Null or undefined
+- <a href="#number">_num_</a> → Number
+- <a href="#object">_obj_</a> → Object
+- <a href="#promise">_prom_</a> → Promise
+- <a href="#regex">_regex_</a> → Regular expression
+- <a href="#string">_str_</a> → String
+- <a href="#symbol">_sym_</a> → Symbol
+- <a href="#undefined">_undef_</a> → Undefined
 
 ## Typa Method
 
-Ternary function that checks if the supplied value matches the specified type, then returns the first function (or value) if true or the second function (or value) if false.
+Ternary operator that checks if the supplied value matches the specified type, then returns the first callback function (or value) if true or the second callback function (or value) if false.
 
 **.typa**($type, $value, $fn1, $fn2)
 
-```
-const myString = 'this is a string'
-const myArray = 'this is also a string, not an array'
+```js
+const isStr = () => console.log('I am a string')
+const aintStr = () => console.log('I am not a string')
 
-const fn1 = (() => console.log('hello'))
-const fn2 = (() => console.log('goodbye'))
+is.typa('str', 'Am I a string?', isStr, aintStr)
+// => 'I am a string'
 
-is.typa('str', myString, fn1, fn2)
-  // => 'hello'
-
-is.typa('arr', myArray, fn1, fn2)
-  // => 'goodbye'
+is.typa('str', ['Am', 'I', 'a', 'string', '?'], isStr, aintStr)
+// => 'I am not a string'
 ```
 
 ## What Method
 
 Returns a string or an array of strings matching the type of the supplied value.
 
-**.what**($value)
+**.what**(\$value)
 
-```
-const myString = 'this is a string'
-const myArray = 'this is my array'
+```js
+is.what('This is a string')
+// => 'string'
 
-is.what(myString)
-  // => 'string'
-
-is.what(myArray)
-  // => ['array', 'object']
+is.what(['This', 'is', 'an', 'array'])
+// => ['array', 'object']
 ```
 
 ## Individual Type Methods
 
-<a name="array"></a>**.arr**($value) — Array
+<a name="array"></a>**.arr**(\$value) — Array
 
-```
+```js
 const isArray = is.arr(['text', 12])
-  // => true
+// => true
 ```
 
-<a name="bad"></a>**.bad**($value) — Null, undefined, empty, or an error
+<a name="bad"></a>**.bad**(\$value) — Null, undefined, empty, or an error
 
-```
+```js
 let isBad = is.bad(null)
-  // => true
+// => true
 
 isBad = is.bad(undefined)
-  // => true
+// => true
 
 isBad = is.bad({})
-  // => true
+// => true
 
 isBad = is.bad(new Error('This is an error'))
-  // => true
+// => true
 ```
 
-<a name="boolean"></a>**.bool**($value) — Boolean
+<a name="boolean"></a>**.bool**(\$value) — Boolean
 
-```
+```js
 let isBool = is.bool(true)
-  // => true
+// => true
 
 isBool = is.bool(false)
-  // => true
+// => true
 ```
 
-<a name="date"></a>**.date**($value) — Date
+<a name="date"></a>**.date**(\$value) — Date
 
-```
+```js
 const isDate = is.date(new Date())
-  // => true
+// => true
 ```
 
-<a name="empty"></a>**.empty**($value) — Empty string, array, or object
+<a name="empty"></a>**.empty**(\$value) — Empty string, array, or object
 
-```
+```js
 let isEmpty = is.empty('')
-  // => true
+// => true
 
 isEmpty = is.empty([])
-  // => true
+// => true
 
 isEmpty = is.empty({})
-  // => true
+// => true
 ```
 
-<a name="error"></a>**.err**($value) — Error
+<a name="error"></a>**.err**(\$value) — Error
 
-```
+```js
 const isErr = is.err(new Error('This is an error.'))
-  // => true
+// => true
 ```
 
-<a name="function"></a>**.fn**($value) — Function
+<a name="function"></a>**.fn**(\$value) — Function
 
-```
-const isFn = is.fn(() => { console.log('Hi!') })
-  // => true
+```js
+const isFn = is.fn(() => {
+  console.log('Hi!')
+})
+// => true
 ```
 
-<a name="integer"></a>**.int**($value) — Integer
+<a name="integer"></a>**.int**(\$value) — Integer
 
-```
+```js
 const isInt = is.int(12)
-  // => true
+// => true
 ```
 
-<a name="json"></a>**.json**($value) — Serialized JSON object
+<a name="json"></a>**.json**(\$value) — Serialized JSON object
 
-```
+```js
 const isJson = is.json('{"key": "value"}')
-  // => true
+// => true
 ```
 
-<a name="null"></a>**.nll**($value) — Null
+<a name="nil"></a>**.nil**(\$value) — Null
 
-```
-const isNll = is.nll(null)
-  // => true
-```
-
-<a name="noru"></a>**.noru**($value) — Null or Undefined
-
-```
-let isNoru = is.noru(null)
-  // => true
-
-isNoru = is.noru(undefined)
-  // => true
+```js
+const isNil = is.nil(null)
+// => true
 ```
 
-<a name="number"></a>**.num**($value) — Number
+<a name="nullish"></a>**.nullish**(\$value) — Null or Undefined
 
+```js
+let isNullish = is.nullish(null)
+// => true
+
+isNullish = is.nullish(undefined)
+// => true
 ```
+
+<a name="number"></a>**.num**(\$value) — Number
+
+```js
 const isNum = is.num(28.2)
-  // => true
+// => true
 ```
 
-<a name="object"></a>**.obj**($value) — Object
+<a name="object"></a>**.obj**(\$value) — Object
 
-```
+```js
 const isObj = is.obj({ key: 'value' })
-  // => true
+// => true
 ```
 
-<a name="promise"></a>**.prom**($value) — Promise
+<a name="promise"></a>**.prom**(\$value) — Promise
 
-```
+```js
 const myPromise = new Promise((resolve, reject) => {
   try {
     console.log('I make a promise to you')
     resolve()
-  } catch(err) {
+  } catch (err) {
     reject(err)
   }
 })
 
 const isProm = is.prom(myPromise)
-  // => true
+// => true
 ```
 
-<a name="regex"></a>**.regex**($value) — Regular Expression
+<a name="regex"></a>**.regex**(\$value) — Regular Expression
 
-```
+```js
 const isRegex = is.regex(new Regex(/\W/))
-  // => true
+// => true
 ```
 
-<a name="string"></a>**.str**($value) — String
+<a name="string"></a>**.str**(\$value) — String
 
-```
+```js
 const isStr = is.str('text')
-  // => true
+// => true
 ```
 
-<a name="symbol"></a>**.sym**($value) — Symbol
+<a name="symbol"></a>**.sym**(\$value) — Symbol
 
-```
+```js
 const isSym = is.sym(Symbol(42))
-  // => true
+// => true
 ```
 
-<a name="undefined"></a>**.undef**($value) — Undefined
+<a name="undefined"></a>**.undef**(\$value) — Undefined
 
-```
+```js
 const isUndef = is.undef(undefined)
-  // => true
+// => true
 ```
+
+## Author
+
+👤 **Daniel Sieradski <hello@self.agency>**
+
+- Website: [self.agency](https://self.agency)
+- Twitter: [@selfagency_llc](https://twitter.com/selfagency_llc)
+- GitLab: [@selfagency](https://gitlab.com/selfagency)
+
+## Acknowledgements
+
+Most of the checks comprising this library were pilfered from [this blog post](https://www.webbjocke.com/javascript-check-data-types/) by [Webbjocke](https://github.com/webbjocke).
+
+## Contributing
+
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://gitlab.com/selfagency/utfu/issues).
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
