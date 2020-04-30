@@ -166,10 +166,10 @@ const isInt = is.int(12)
 <a name="json"></a>**.json**(\$value, \$type ['str'|'obj']) — JSON string (default) or object
 
 ```js
-const isJson = is.json('{"key": "value"}')
+let isJson = is.json('{"key": "value"}')
 // => true
 
-const isJson = is.json({ key: 'value' }, 'obj')
+isJson = is.json({ key: 'value' }, 'obj')
 // => true
 ```
 
