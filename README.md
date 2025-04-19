@@ -1,5 +1,8 @@
 # Typa: Zero-dep JS type checker 🧐
 
+Deprecated. Try [Radashi](https://radashi.js.org/) instead.
+
+<s>
 [![npm](https://img.shields.io/npm/dt/typa.svg)](https://www.npmjs.com/package/typa) [![npm](https://img.shields.io/npm/v/typa.svg)](https://www.npmjs.com/package/typa) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Twitter: @selfagency_llc](https://img.shields.io/twitter/follow/selfagency_llc.svg?style=social)](https://twitter.com/selfagency_llc)
 
 The easy-peasy zero-dependency JavaScript type checker that asks, "What typa input is that?" Minified packaged version is 2 entire KB.
@@ -267,3 +270,4 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
+</s>
